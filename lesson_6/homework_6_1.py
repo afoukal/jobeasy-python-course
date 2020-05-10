@@ -4,6 +4,8 @@ list_1 = [1, 'asdasd', True, 2, False, 4, 'Hello world', None, range(1, 11), 100
 
 def swap_first_last(array_1):
     pass
+    list_1[0], list_1[-1] = list_1[-1], list_1[0]
+    return list_1
 
 
 # You are given a list in list_2 variable, write a reverse_list function which creates a new list in reversed order.
@@ -11,14 +13,21 @@ list_2 = [1, 'asdasd', True, 2, False, 4, 'Hello world', None, range(1, 11), 100
 
 def reverse_list(array_2):
     pass
+    list_2.reverse()
+    return list_2
 
 
 # Create a list which contains only number items and save it to the list_3 variable. Then write multiply_list_items
 # function to multiply all the items in a list.
-list_3 = None
+list_3 = [7, 8, 9, 2, 3, 4]
 
-def multiply_list_items(array_3):
+def multiply_list_items(array_3, mult = 1):
     pass
+    for item in list_3:
+        mult *= item
+        item + 1
+    return mult
+
 
 
 # Create a list which contains only number items and save it to the list_4 variable. Then write a smallest_item_list
@@ -27,13 +36,18 @@ list_4 = [10, 2, 5, 5, 0]
 
 def smallest_item_list(array_4):
     pass
+    return min(list_4)
 
 
 # Given a list in list_5 variable, write a remove_duplicates_list function to remove duplicates from a list.
 list_5 = [1, 2, 3, 1, 1, 1, 2, 3, 4, 'hello', 1, 2, 3, 4, 'hello', 'hello', 1]
 
-def remove_duplicates_list(array_5):
+def remove_duplicates_list(array_5, result = []):
     pass
+    for item in list_5:
+        if item not in result:
+            result.append(item)
+    return result
 
 
 # You are given a list in list_6 variable.Enter an integer number and save it to number_1 variable,
@@ -48,8 +62,12 @@ list_6 = ['On', 'it', 'differed', 'repeated', 'wandered', 'required', 'in.', 'Th
           'should', 'if', 'waited', 'common', 'person', 'little', 'oh.', 'Improved', 'civility', 'graceful', 'few',
           'smallest', 'screened', 'settling.', 'Likely', 'active', 'her', 'warmly', 'has.']
 
-def longer_words_list(array_6, number1):
+def longer_words_list(array_6, number1, result = []):
     pass
+    for item in list_6:
+        if len(item) > number_1:
+            result.append(item)
+    return result
 
 
 # Given two lists in list_7 and list_8 variables. Write a function find_item_lists that takes two lists and returns
@@ -57,8 +75,14 @@ def longer_words_list(array_6, number1):
 list_7 = [1, 2, 3, 1, 1, 1, 2, 3, 4, 'hello', 1, 2, 3, 4, 'hello', 'hello', 1]
 list_8 = ['asdasd', True, 8, False, 94, 'Hello world', None, range(1, 11), 100, 1]
 
-def find_item_lists(array_7, array_8):
+def find_item_lists(array_7, array_8, result = False):
     pass
+    for x in list_7:
+        for y in list_8:
+            if x == y:
+                result = True
+    return result
+
 
 
 # You are given a list in list_9 variable. Write a function string_to_list to convert a list of
@@ -67,6 +91,7 @@ list_9 = ['I', ' ', 'l', 'i', 'k', 'e', ' ', 'P', 'y', 't', 'h', 'o', 'n']
 
 def list_to_string(list9):
     pass
+    return ''.join(list_9)
 
 
 # Given a list of numbers in list_10 and a number number_2, write count_items_list function which will count number of
@@ -76,12 +101,18 @@ number_2 = 3
 
 def count_items_list(array_10, number2):
     pass
+    return list_10.count(number_2)
 
 
 # Given a list of numbers, write a function even_items_list to return new list which include all even numbers in
 # given list.
 list_11 = [1, 2, 3, 1, 1, 1, 2, 3, 4]
 
-def even_items_list(array_11):
+def even_items_list(array_11, array = []):
     pass
+    for item in list_11:
+        if item % 2 == 0:
+            array.append(item)
+    return array
+
 
