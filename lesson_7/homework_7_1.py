@@ -4,10 +4,14 @@
 
 countries = ('USA', 'Canada', 'United Kingdom', 'Mexico', 'Brazil', 'Argentina', 'Chili', 'South Africa', 'Egypt',
              'Morocco', 'India', 'China', 'Ukraine', 'Spain', 'France', 'Russia')
-your_choice_country = None
+your_choice_country = 'Canada'
 
 def find_index_by_value(value, tuple1):
     pass
+    if your_choice_country in countries:
+        return countries.index(your_choice_country)
+    else:
+        return -1
 
 
 # Change the previous exercise. Enter a random number and save it to variable your_choice_number. Write
@@ -15,17 +19,21 @@ def find_index_by_value(value, tuple1):
 # If there is a value with this index your_choice_number in the tuple, return this value,
 # otherwise return a 'No such index' text
 
-your_choice_number = None
+your_choice_number = 7
 
 def find_value_by_index(index, tuple1):
     pass
+    if countries[your_choice_number] in countries:
+        return countries[your_choice_number]
+    else:
+        return "No such index"
 
 
 # Enter a pair of values in variables new_team_name, new_team_city. Then write add_your_own_team function
 # to add them to nhl_hockey_teams dictionary, where the name will be the key.
 
-new_team_name = None
-new_team_city = None
+new_team_name = "Wild Russians"
+new_team_city = "Moscow"
 
 nhl_hockey_teams = {
     "Canadiens": "Montreal",
@@ -52,22 +60,27 @@ nhl_hockey_teams = {
 
 def add_your_own_team(team_name, team_city):
     pass
+    list_1 = list(nhl_hockey_teams.items())
+    list_1.append((new_team_name, new_team_city))
+    return dict(list_1)
 
 
 # Create two dictionaries in dict_1, dict_2 variables. Write a join_dicts function to concatenate the following
 # dictionaries to create a new one.
 
-dict_1 = None
-dict_2 = None
+dict_1 = {'name1': 'Ana', 'name2': 'Ilya'}
+dict_2 = { 'name3': 'Sergey', 'name4' : 'Daniel'}
 
 def join_dicts(dict1, dict2):
     pass
+    list_1 = list(dict_1.items()) + list(dict_2.items())
+    return dict(list_1)
 
 
 # # Enter a random number and save it to number_1 variable. Then write create_numbers_dict function to generate
 # a dictionary that contains items with keys from 1 to number_1 and values in format "x": "x**2".
 
-number_1 = None
+number_1 = 13
 
 def create_numbers_dict(number1):
     pass
@@ -98,8 +111,11 @@ dict_3 = {
     "Washington Capitals": 1
 }
 
-def sum_up_hockey_cups(teams_dict):
+def sum_up_hockey_cups(teams_dict, result = 0):
     pass
+    for item in dict_3.values():
+        result += item
+    return result
 
 
 # Write remove_item_by_key function to remove a key True from dict_4 dictionary.
@@ -113,6 +129,8 @@ dict_4 = {
 
 def remove_item_by_key(dict1):
     pass
+    del dict_4[True]
+    return  dict_4
 
 
 # Write find_min_max function to get the maximum and minimum value in dict_5 dictionary. Return the answer in format
@@ -142,6 +160,11 @@ dict_5 = {
 
 def find_min_max(dict1):
     pass
+    list_1 = list(dict_5.values())
+    min_number = min(list_1)
+    max_number = max(list_1)
+    dict_6 = {'min': min_number, 'max': max_number}
+    return dict_6
 
 
 # Write remove_duplicates functions to remove duplicates from dictionary dict_6.
@@ -159,5 +182,10 @@ dict_6 = {
     "Bailey": "labrador"
 }
 
-def remove_duplicates(dict1):
+def remove_duplicates(dict1, result = {}):
     pass
+    for key,values in dist_6.items():
+        if value not in result.values():
+            result[key] = values
+    return result
+
